@@ -27,7 +27,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         imagePicker.delegate = self
         
-        nextButton.isEnabled = true
+        nextButton.isEnabled = false
 
 
         // Do any additional setup after loading the view.
@@ -38,15 +38,20 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
+        if image != nil {
+        
+        
+        nextButton.isEnabled = true
         imageView.image = image
         imageView.backgroundColor = UIColor.clear
         
-        imagePicker.dismiss(animated: true, completion: nil)
+        imagePicker.dismiss(animated: true, completion: nil)}
+
     }
 
     @IBAction func cameraTapped(_ sender: Any) {
         
-        imagePicker.sourceType = .savedPhotosAlbum
+        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
         present(imagePicker, animated: true, completion: nil)
         
