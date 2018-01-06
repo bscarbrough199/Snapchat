@@ -16,6 +16,9 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var selectUsertable: UITableView!
     
     var users : [User] = []
+    var imageURL : String = ""
+    var descrip : String = ""
+    var uuid : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,26 +34,19 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
             
             
             let user = User()
-            print(user)
             
             //user.email = snapshot.value!["email"] as! String
             let snapshotValue = snapshot.value as? NSDictionary
             user.email = snapshotValue!["email"] as! String
             
-            print(user.email)
             
             //user.email = email
             user.uid = snapshot.key
-            print(user.email)
                 
             
             self.users.append(user)
-            print(user.email)
             
             self.selectUsertable.reloadData()
-            print(user.email)
-                print (user.uid)
-            print(self.users)
             
         })
         
@@ -79,6 +75,17 @@ class SelectUserViewController: UIViewController, UITableViewDelegate, UITableVi
 
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let user = users[indexPath.row]
+        let snap = ["from":user.email, "description":descrip, "image":imageURL, "uuid":uuid]
+        
+        Database.database().reference().child("users").child(user.uid).child("snaps").childByAutoId().setValue(snap)
+        
+        navigationController!.popToRootViewController(animated: true)
+    }
+    
     
     
 

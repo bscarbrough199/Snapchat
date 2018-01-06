@@ -15,9 +15,9 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     var imagePicker = UIImagePickerController()
     
+    var uuid = NSUUID().uuidString
     
     
-
     
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
@@ -27,7 +27,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         imagePicker.delegate = self
         
-
+        nextButton.isEnabled = true
 
 
         // Do any additional setup after loading the view.
@@ -66,7 +66,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         let imageData = UIImageJPEGRepresentation(self.imageView.image!, 0.1)
         
         
-        imagesFolder.child("\(NSUUID().uuidString).jpg").putData(imageData!, metadata: nil) { (metadata, error) in
+        imagesFolder.child("\(uuid).jpg").putData(imageData!, metadata: nil) { (metadata, error) in
             print ("Trying to Upload...")
             if error != nil {
                 print("We had an error: \(error)")
@@ -75,7 +75,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
                 
                 print(metadata?.downloadURL())
                 
-                self.performSegue(withIdentifier: "selectUserSegue", sender: nil)
+                self.performSegue(withIdentifier: "selectUserSegue", sender: metadata?.downloadURL()?.absoluteString)
             }
         }
         
@@ -90,6 +90,11 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
             
          //)
         //}
+        
+        let nextVC = segue.destination as! SelectUserViewController
+        nextVC.imageURL = sender as! String
+        nextVC.descrip = descriptionTextField.text!
+        nextVC.uuid = uuid
     }
     
 }

@@ -12,6 +12,8 @@
 		DE90D8841FFEA6150031B8AE /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE90D8831FFEA6150031B8AE /* PictureViewController.swift */; };
 		DE90D8861FFEC8240031B8AE /* SelectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE90D8851FFEC8240031B8AE /* SelectUserViewController.swift */; };
 		DE90D8881FFED46F0031B8AE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE90D8871FFED46F0031B8AE /* User.swift */; };
+		DE90D88C200032A20031B8AE /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE90D88B200032A20031B8AE /* Snap.swift */; };
+		DE9F487C200038D900753F32 /* ViewSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F487B200038D900753F32 /* ViewSnapViewController.swift */; };
 		DEB56CB81FFC1C22004B3804 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB56CB71FFC1C22004B3804 /* AppDelegate.swift */; };
 		DEB56CBA1FFC1C22004B3804 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB56CB91FFC1C22004B3804 /* SignInViewController.swift */; };
 		DEB56CBD1FFC1C22004B3804 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB56CBB1FFC1C22004B3804 /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 		DE90D8831FFEA6150031B8AE /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		DE90D8851FFEC8240031B8AE /* SelectUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserViewController.swift; sourceTree = "<group>"; };
 		DE90D8871FFED46F0031B8AE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DE90D88B200032A20031B8AE /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
+		DE9F487B200038D900753F32 /* ViewSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSnapViewController.swift; sourceTree = "<group>"; };
 		DEB56CB41FFC1C21004B3804 /* Snapchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB56CB71FFC1C22004B3804 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEB56CB91FFC1C22004B3804 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 				DE90D8811FFEA4240031B8AE /* SnapsViewController.swift */,
 				DE90D8831FFEA6150031B8AE /* PictureViewController.swift */,
 				DE90D8851FFEC8240031B8AE /* SelectUserViewController.swift */,
+				DE9F487B200038D900753F32 /* ViewSnapViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -74,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				DE90D8871FFED46F0031B8AE /* User.swift */,
+				DE90D88B200032A20031B8AE /* Snap.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Snapchat/Pods-Snapchat-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -207,6 +214,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -258,7 +266,9 @@
 				DEB56CBA1FFC1C22004B3804 /* SignInViewController.swift in Sources */,
 				DE90D8841FFEA6150031B8AE /* PictureViewController.swift in Sources */,
 				DE90D8881FFED46F0031B8AE /* User.swift in Sources */,
+				DE9F487C200038D900753F32 /* ViewSnapViewController.swift in Sources */,
 				DE90D8861FFEC8240031B8AE /* SelectUserViewController.swift in Sources */,
+				DE90D88C200032A20031B8AE /* Snap.swift in Sources */,
 				DEB56CB81FFC1C22004B3804 /* AppDelegate.swift in Sources */,
 				DE90D8821FFEA4240031B8AE /* SnapsViewController.swift in Sources */,
 			);
